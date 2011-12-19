@@ -45,14 +45,14 @@ module Clrhatnd
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.sass.preferred_syntax = :sass
+#    config.sass.preferred_syntax = :sass
 
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true
-    #config.action_mailer.default_url_options = { :host => 'yourdomain.com' }
+    config.action_mailer.default_url_options = { :host => 'yourdomain.com' }
     #ActionMailer::Base.delivery_method = :smtp
     #ActionMailer::Base.perform_deliveries = true
-    #ActionMailer::Base.raise_delivery_errors = true
+    ActionMailer::Base.raise_delivery_errors = true
     ActionMailer::Base.smtp_settings = {
       :enable_starttls_auto => true,
       :address            => 'smtp.gmail.com',
