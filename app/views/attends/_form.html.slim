@@ -1,0 +1,28 @@
+= form_for @attend do |f|
+  -if @attend.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@attend.errors.count, "error")} prohibited this attend from being saved:"
+      ul
+        - @attend.errors.full_messages.each do |msg|
+          li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :mail
+    = f.text_field :mail
+  .field
+    = f.label :receipt_name
+    = f.text_field :receipt_name
+  .field
+    = f.label :be_lightning
+    = f.check_box :be_lightning
+  .field
+    = f.label :be_party
+    = f.check_box :be_party
+  .field
+    = f.label :other
+    = f.text_area :other
+  .actions
+    = f.submit 'Save'

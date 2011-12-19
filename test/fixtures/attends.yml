@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  mail: MyString
+  receipt_name: MyString
+  be_lightning: false
+  be_party: false
+  other: MyText
+
+two:
+  name: MyString
+  mail: MyString
+  receipt_name: MyString
+  be_lightning: false
+  be_party: false
+  other: MyText

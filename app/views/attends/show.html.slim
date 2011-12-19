@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  b Name:
+  = @attend.name
+p
+  b Mail:
+  = @attend.mail
+p
+  b Receipt name:
+  = @attend.receipt_name
+p
+  b Be lightning:
+  = @attend.be_lightning
+p
+  b Be party:
+  = @attend.be_party
+p
+  b Other:
+  = @attend.other
+
+= link_to 'Edit', edit_attend_path(@attend)
+'|
+= link_to 'Back', attends_path
