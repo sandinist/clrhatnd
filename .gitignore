@@ -14,5 +14,3 @@
 /log/*.log
 /tmp
 
-
-*.lock
