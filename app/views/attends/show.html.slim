@@ -1,24 +1,31 @@
 p#notice = notice
 
-p
-  b Name:
-  = @attend.name
-p
-  b Mail:
-  = @attend.mail
-p
-  b Receipt name:
-  = @attend.receipt_name
-p
-  b Be lightning:
-  = @attend.be_lightning
-p
-  b Be party:
-  = @attend.be_party
-p
-  b Other:
-  = @attend.other
 
-= link_to 'Edit', edit_attend_path(@attend)
-'|
-= link_to 'Back', attends_path
+p 下記の内容で登録を受け付けました。
+p 登録いただいたメールアドレス宛に、
+  確認のメールを送付しておりますのでご確認下さい。
+p 当日お会いできるのを楽しみにしております。
+
+table(id=:show_table)
+  tr
+    td= Attend.human_attribute_name(:name)
+    td= @attend.name
+  tr
+    td= Attend.human_attribute_name(:mail)
+    td= @attend.mail
+  tr
+    td= Attend.human_attribute_name(:receipt_name)
+    td= @attend.receipt_name
+  tr
+    td= Attend.human_attribute_name(:be_lightning)
+    td= @attend.be_lightning
+  tr
+    td= Attend.human_attribute_name(:be_party)
+    td= @attend.be_party
+  tr
+    td= Attend.human_attribute_name(:other)
+    td= @attend.other
+
+/ = link_to t('edit'), edit_attend_path(@attend)
+/ '|
+/ = link_to t('back'), attends_path

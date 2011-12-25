@@ -2,12 +2,12 @@ h1 Listing attends
 
 table
   tr
-    th Name
-    th Mail
-    th Receipt name
-    th Be lightning
-    th Be party
-    th Other
+    th = Attend.human_attribute_name :name
+    th = Attend.human_attribute_name :mail
+    th = Attend.human_attribute_name :receipt_name
+    th = Attend.human_attribute_name :be_lightning
+    th = Attend.human_attribute_name :be_party
+    th = Attend.human_attribute_name :other
     th
     th
     th
@@ -20,10 +20,10 @@ table
       td= attend.be_lightning
       td= attend.be_party
       td= attend.other
-      td= link_to 'Show', attend
-      td= link_to 'Edit', edit_attend_path(attend)
-      td= link_to 'Destroy', attend, :confirm => 'Are you sure?', :method => :delete
+      td= link_to t('show'), attend
+      td= link_to t('edit'), edit_attend_path(attend)
+      td= link_to t('destroy'), attend, :confirm => 'Are you sure?', :method => :delete
 
 br
 
-= link_to 'New Attend', new_attend_path
+= link_to t('new'), new_attend_path

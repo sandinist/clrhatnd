@@ -1,3 +1,6 @@
+# encoding = utf-8
+
+
 class AttendsController < ApplicationController
   # GET /attends
   # GET /attends.json
@@ -45,9 +48,6 @@ class AttendsController < ApplicationController
     respond_to do |format|
       if @attend.save
         AtndNotifier.received(@attend).deliver
-
-        p "call atnd_notifier"
-
         format.html { redirect_to @attend, notice: 'Attend was successfully created.' }
         format.json { render json: @attend, status: :created, location: @attend }
 
@@ -66,7 +66,7 @@ class AttendsController < ApplicationController
 
     respond_to do |format|
       if @attend.update_attributes(params[:attend])
-        format.html { redirect_to @attend, notice: 'Attend was successfully updated.' }
+        format.html { redirect_to @attend, notice: '登録に成功しました。' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
