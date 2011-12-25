@@ -1,5 +1,6 @@
 Clrhatnd::Application.routes.draw do
   resources :attends
+  root :to => 'attends#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
