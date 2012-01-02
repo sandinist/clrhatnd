@@ -63,7 +63,7 @@ module Clrhatnd
       :domain             => 'gmail.com',
       :authentication     => :plain,
       :user_name          => 'clrh.atnd',
-      :password           => ENV[:MAIL_PASSWORD]
+      :password           => ENV["MAIL_PASSWORD"]
     }
   end
 end
