@@ -56,9 +56,6 @@ module Clrhatnd
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true
     config.action_mailer.default_url_options = { :host => 'clrhatnd.heroku.com' }
-    #ActionMailer::Base.delivery_method = :smtp
-    #ActionMailer::Base.perform_deliveries = true
-    ActionMailer::Base.raise_delivery_errors = true
     ActionMailer::Base.smtp_settings = {
       :enable_starttls_auto => true,
       :address            => 'smtp.gmail.com',
@@ -66,7 +63,7 @@ module Clrhatnd
       :domain             => 'gmail.com',
       :authentication     => :plain,
       :user_name          => 'clrh.atnd',
-      :password           => 'clrhokkaido'
+      :password           => ENV[:MAIL_PASSWORD]
     }
   end
 end
