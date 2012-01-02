@@ -1,4 +1,9 @@
-h1 Listing attends
+p
+  h1 Listing attends
+
+  = link_to "CSV出力", :controller=>"attends", :action=>"csv"
+  ||
+  = link_to "全削除", attends_path, :confirm => 'Are you sure?', :method => :delete
 
 table
   tr

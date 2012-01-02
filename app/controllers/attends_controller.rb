@@ -86,4 +86,19 @@ class AttendsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def truncate
+    Attend.delete_all
+    redirect_to attends_url
+  end
+
+  def csv
+    csv_string = CSV.generate do |csv|
+        csv << ['名前', 'メール', '領収書宛名', 'LT登壇', '懇親会参加', 'その他']
+      Attend.find(:all).each do |u|
+        csv << [u.name, u.mail, u.receipt_name, u.be_lightning, u.be_party, u.other]
+      end
+    end
+    send_data(csv_string, :type=>'text/csv', :filename=>'clrhatnd.csv')
+  end
 end

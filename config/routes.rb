@@ -8,7 +8,11 @@ Clrhatnd::Application.routes.draw do
   end
 
   resources :users
-  resources :attends
+  resources :attends do
+    delete '/' => 'attends#truncate', :on => :collection
+    get 'csv' => :csv, :on => :collection
+  end
+
   root :to => 'attends#new'
 
   # The priority is based upon order of creation:
