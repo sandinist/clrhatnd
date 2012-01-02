@@ -1,0 +1,14 @@
+div(class='depot_form')
+  - if flash[:alert]
+    p(id="notice") = flash[:alert]
+
+  = form_tag do
+      ' ログインしてください
+      div
+        = label_tag :name, '名前:'
+        = text_field_tag :name, params[:name]
+      div
+        = label_tag :password, 'パスワード:'
+        = password_field_tag :password, params[:password]
+      div
+        = submit_tag "ログイン"

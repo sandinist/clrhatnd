@@ -1,0 +1,9 @@
+= image_tag 'http://clr-h.jp/Portals/0/clr-h_logo.png'
+h1 ようこそ管理画面へ
+
+p = "現在の時刻は、#{Time.now}です。"
+p
+  = "現在の申し込み人数は #{@attend_count}人です -> "
+  = link_to '一覧へ', attends_path
+
+= button_to 'ログアウト', logout_path, method: :delete

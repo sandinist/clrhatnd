@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class AttendsController < ApplicationController
+  skip_before_filter :authorize, only: [:new, :create, :show]
   # GET /attends
   # GET /attends.json
   def index
@@ -47,7 +48,7 @@ class AttendsController < ApplicationController
     respond_to do |format|
       if @attend.save
         AtndNotifier.received(@attend).deliver
-        format.html { redirect_to @attend, notice: '参加登録に成功しました！' }
+        format.html { redirect_to @attend, notice: '参加登録を受付いたしました！' }
         format.json { render json: @attend, status: :created, location: @attend }
 
         p "call format"
