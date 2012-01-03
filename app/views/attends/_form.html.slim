@@ -17,10 +17,10 @@
     = f.text_field :receipt_name
   .field
     = f.label :be_lightning
-    = f.check_box :be_lightning
+    = f.select :be_lightning, [["登壇する", true], ["登壇しない", false]],  {:include_blank => true}
   .field
     = f.label :be_party
-    = f.check_box :be_party
+    = f.select :be_party, [["参加する", true], ["参加しない", false]],  {:include_blank => true}
   .field
     = f.label :other
     br
