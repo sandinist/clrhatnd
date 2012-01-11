@@ -21,7 +21,7 @@ table(id=:show_table)
     td= @attend.be_lightning ? "登壇する" : "登壇しない"
   tr
     td= Attend.human_attribute_name(:be_party)
-    td= @attend.be_party ? "参加しない" : "参加する"
+    td= @attend.be_party ? "参加する" : "参加しない"
   tr
     td= Attend.human_attribute_name(:other)
     td= @attend.other
