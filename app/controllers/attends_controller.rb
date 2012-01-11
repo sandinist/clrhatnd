@@ -99,6 +99,7 @@ class AttendsController < ApplicationController
         csv << [u.name, u.mail, u.receipt_name, u.be_lightning, u.be_party, u.other]
       end
     end
-    send_data(csv_string, :type=>'text/csv', :filename=>'clrhatnd.csv')
+    csv_string.encode!("sjis", "utf-8") if request.user_agent =~ /windows/i
+    send_data(csv_string, :type=>"text/csv", :filename=>'clrhatnd.csv')
   end
 end
